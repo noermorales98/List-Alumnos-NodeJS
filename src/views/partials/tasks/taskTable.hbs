@@ -1,0 +1,38 @@
+
+{{#if tasks}}
+<table class="table table-bordered table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tasks}}
+    <tr>
+      <th>{{@index}}</th>
+      <td><strong>{{title}}</strong></td>
+      <td>{{description}}</td>
+      <td>
+        {{#if done}} {{!apertura del if}}
+        <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Done</a>
+        {{else}}
+        <a class="btn btn-secondary" href="/tasks/{{_id}}/toggleDone">Undone</a>
+        {{/if}} {{!cierre del if}}
+        <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+        <a class="btn btn-info" href="/tasks/{{_id}}/edit">Edit</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<div>
+  <div>
+    <h1>No tasks</h1>
+    <img src="/img/folder-command-open.svg" class="w-25"/>
+  </div>
+</div>
+{{/if}}

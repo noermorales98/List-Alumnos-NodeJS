@@ -1,4 +1,5 @@
 import app from "./app"
+import "./utils/mongoose"
 
 
 //01 parte
@@ -6,5 +7,5 @@ import app from "./app"
 //AQUI NUESTRO SERVER QUE IMPORTA A APP
 
 //poner un servicio localhost:3000
-app.listen(3001);
-console.log("serve port",3001);
+app.listen(app.get("port"));
+console.log('Server port', 3000)

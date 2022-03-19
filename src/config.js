@@ -1,5 +1,5 @@
-import {config} from "dotendv";
+import {config} from "dotenv"
 
 config();
-//madar al archivo de mongoose
-export const MONGODB_URI= process.env.MONGODB_URI || "mongodb+srv://noeli:Grandeyfuerte1@cluster0.rmdhn.mongodb.net/miBD?retryWrites=true&w=majority";
+//madar al archivo de mongoose 
+export const MONGODB_URI= process.env.MONGODB_URI || "mongodb+srv://root:root@miprimerbd.rmdhn.mongodb.net/Task?retryWrites=true&w=majority";

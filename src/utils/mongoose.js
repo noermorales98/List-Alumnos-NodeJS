@@ -1,14 +1,11 @@
 import {connect} from "mongoose";
-import { MONGODB_URI } from "../config";
-
-
-//conexion a la base de datos
-(async()=> {
-    try{
-        const db = await connect(MONGODB_URI);
-        console.log("db connect to", db.connection.name);
-    }
-    catch(error){
-        console.log(error);
-    }
+import {MONGODB_URI} from "../config";
+// connection to db
+(async () => {
+ try {
+ const db = await connect(MONGODB_URI);
+ console.log("base de datos conectada a", db.connection.name);
+ } catch (error) {
+ console.error(error);
+ }
 })();

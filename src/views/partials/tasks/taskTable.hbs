@@ -7,6 +7,7 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Operations</th>
+      <th scope="col">Sexo</th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,9 @@
         {{/if}} {{!cierre del if}}
         <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
         <a class="btn btn-info" href="/tasks/{{_id}}/edit">Edit</a>
+      </td>
+      <td>
+        {{sexo}}
       </td>
     </tr>
     {{/each}}

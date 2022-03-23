@@ -1,13 +1,18 @@
 <div class="card card-body p-4 rounded-10 bg-dark text-white">
-    <h3>Add a Tasks</h3>
+    <h3>Añade una nueva tarea</h3>
     <form action="/tasks/add" method="post">
         <div class="mb-3">
             <label for="title" class="form-label">Write a title:</label>
-            <input type="text" class="form-control" id="title" placeholder="Title" name="title" autofocus/>
+            <input type="text" class="form-control" id="title" placeholder="Title" name="title"/>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" cols="80" placeholder="Add a description"></textarea>
+            <textarea class="form-control" id="description" cols="80" name="description" placeholder="description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="sexo" class="form-label">Sexo</label>
+            <input type="radio" name="sexo" id="sexo" value="Hombre" autofocus>Hombre
+            <input type="radio" name="sexo" id="sexo" value="Mujer">Mujer
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>

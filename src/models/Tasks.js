@@ -16,6 +16,9 @@ const TaskSchema = Schema(
             type: Boolean,
             default: false,
         },
+        sexo: {
+            type: String
+        }
     },
     {
         timestamps: true,

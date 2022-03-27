@@ -12,6 +12,17 @@ export const renderTasks = async (req, res) => {
     return res.render("error", { errorMessage: error.message});
   }
 };
+export const renderList = async (req, res) => {
+  try {
+    const tasks = await Task.find().lean();
+    res.render("lista",{
+      tasks,
+    });
+  } catch (error){
+    console.log({error});
+    return res.render("error", { errorMessage: error.message});
+  }
+};
 
 export const createTask = async (req, res, next) => {
   try{
@@ -29,7 +40,7 @@ export const taskToggleDone = async (req, res, next) => {
   const task = await Task.findById(id);
   task.done = !task.done;
   await task.save();
-  res.redirect("/");
+  res.redirect("/list");
 };
 
 export const renderTaskEdit = async (req, res, next) => {
@@ -40,12 +51,12 @@ export const renderTaskEdit = async (req, res, next) => {
 export const editTask = async (req, res, next) => {
   const {id} = req.params;
   await Task.updateOne({_id: id}, req.body);
-  res.redirect("/");
+  res.redirect("/list");
 };
 
 export const deleteTask = async (req, res, next) => {
   let {id} = req.params;
   await Task.remove({_id: id});
-  res.redirect("/");
+  res.redirect("/list");
 };
 

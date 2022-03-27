@@ -4,6 +4,7 @@ import {
     deleteTask,
     renderTasks,
     taskToggleDone,
+    renderList,
     renderTaskEdit,
     editTask
 } from "../controller/tasks.controllers";
@@ -14,6 +15,7 @@ import {
 const router = Router();
 
 router.get("/",renderTasks);
+router.get("/list",renderList);
 router.post("/tasks/add",createTask);
 router.get("/tasks/:id/toggleDone", taskToggleDone);
 router.get("/tasks/:id/edit", renderTaskEdit);

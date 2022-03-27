@@ -14,6 +14,7 @@ const app = express();
 //agregar los views ahi encontrara las vistas
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //declarando motor engine: HANDLEBARS, para que sepa que formato utilizara el prograama
 const exphbs = create({
@@ -35,7 +36,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(indexRoutes);
 
-app.use(express.static(path.join(__dirname, "public")));
+
 
 app.use((req, res, next) => {
   res.status(404).render("404");

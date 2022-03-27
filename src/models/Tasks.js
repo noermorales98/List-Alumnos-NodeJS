@@ -2,13 +2,13 @@ import {Schema, model} from "mongoose";
 
 const TaskSchema = Schema(
     {
-        title: {
+        name: {
             type: String,
             required: true,
             trim: true,
             unique: true
         },
-        description: {
+        matricula: {
             type: String,
             trim: true,
         },
@@ -16,7 +16,7 @@ const TaskSchema = Schema(
             type: Boolean,
             default: false,
         },
-        sexo: {
+        calificacion: {
             type: String
         }
     },

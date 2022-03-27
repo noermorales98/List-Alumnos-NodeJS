@@ -4,20 +4,20 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Titulo</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Operaciones</th>
+      <th scope="col">Alumno</th>
+      <th scope="col">Matrícula</th>
+      <th scope="col">Calificación</th>
+      <th scope="col">Opción</th>
     </tr>
   </thead>
   <tbody>
     {{#each tasks}}
     <tr>
       <th>{{@index}}</th>
-      <td><strong>{{title}}</strong></td>
-      <td>{{description}}</td>
+      <td><strong>{{name}}</strong></td>
+      <td>{{matricula}}</td>
       <td>
-        {{sexo}}
+        {{calificacion}}
       </td>
       <td>
         {{#if done}} {{!apertura del if}}

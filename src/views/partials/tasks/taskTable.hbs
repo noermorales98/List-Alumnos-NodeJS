@@ -13,6 +13,7 @@
   </thead>
   <tbody>
     {{#each tasks}}
+    {{#if done}}
     <tr>
       <th>{{@index}}</th>
       <td><strong>{{name}}</strong></td>
@@ -30,10 +31,50 @@
         <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
       </td>
     </tr>
+    {{/if}}
     {{/each}}
   </tbody>
 </table>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Alumno</th>
+      <th scope="col">Matrícula</th>
+      <th scope="col">Calificación</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Opción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tasks}}
+    {{#if done}}
+    {{else}}
+    <tr>
+      <th>{{@index}}</th>
+      <td><strong>{{name}}</strong></td>
+      <td>{{matricula}}</td>
+      <td>{{calificacion}}</td>
+      {{#ifEquals calificacion 7}}<td>Aprobado</td>{{/ifEquals}}
+      {{#ifCal calificacion 7}}<td>Reprobado</td>{{/ifCal}}
+      <td>
+        {{#if done}} {{!apertura del if}}
+        <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Calificado</a>
+        {{else}}
+        <a class="btn btn-secondary" href="/tasks/{{_id}}/toggleDone">No calificado</a>
+        {{/if}} {{!cierre del if}}
+        <a class="btn btn-primary" href="/tasks/{{_id}}/edit">Edit</a>
+        <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+      </td>
+    </tr>
+    {{/if}}
+    {{/each}}
+  </tbody>
+</table>
+
 {{else}}
+
 <div>
   <div>
     <h1>No tasks</h1>

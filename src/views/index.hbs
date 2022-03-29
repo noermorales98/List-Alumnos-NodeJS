@@ -1,16 +1,16 @@
-<div class="container p-5">
+<div class="container p-5 bg-danger">
     <div class="row">
         <div class="col-md-3">
             {{>tasks/taskForm}}
         </div>
         <div class="col-md-8" style="margin-left: 10px;">
             <h1>Ver promedio del salon</h1>
-            <a href="/list">Ver alumnos</a>
             {{#each tasks}}
             {{#total calificacion @index}}{{/total}} 
             {{/each}}
-            <h1>{{#resultado}}{{/resultado}}</h1>
-            {{!-- {{>tasks/taskTable}} --}}
-    </div>
+            <div style="align-items: center;">
+                <a href="/list" style="marging:30px; border-radius: 20px; font-size:40px; text-decoration:none" class="p-3 mb-2 bg-primary text-white">{{#promediar}}{{/promediar}}</a>
+            </div>
+        </div>
     </div>
 </div

@@ -1,22 +1,21 @@
 <div class="container">
     <div class="row">
-        <div class="card card-body p-4 rounded-10 bg-dark text-white">
-            <h3>Add a Tasks</h3>
+        <div class="p-4 rounded-10">
+            <h1>Editar calificación del alumno</h1>
             <form action="/tasks/{{task._id}}/edit" method="post">
             <div class="mb-3">
-                <label for="title" class="form-label">Write a title:</label>
-                <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{task.title}}"/>
+                <label for="title" class="form-label">Nombre del alumno:</label> <br>
+                <label class="btn btn-light w-100" style="text-align: left;">{{task.name}}</label>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" cols="80" name="description" placeholder="Add a description">{{task.description}}</textarea>
+                <label for="title" class="form-label">Matrícula:</label> <br>
+                <label class="btn btn-light w-100" style="text-align: left;">{{task.matricula}}</label>
             </div>
             <div class="mb-3">
-                <input type="radio" name="transporte" value="Hombre">Hombre
-                <br>
-                <input type="radio" name="transporte" value="Mujer">Mujer
+                <label for="description" class="form-label">Calificación:</label>
+                <input class="form-control" id="calificacion" cols="80" name="calificacion" placeholder="Calificación" value="{{task.calificacion}}"></input>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
             </form>
         </div>
     </div>

@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var suma=0;
+var promedio=0;
 //declarando motor engine: HANDLEBARS, para que sepa que formato utilizara el prograama
 const exphbs = create({
   //nombre de la extension
@@ -28,13 +29,18 @@ const exphbs = create({
   defaultLayout: "main",
   helpers:{
     total: function(valor){
+      promedio = promedio + 1;
       suma=suma+valor;
+    },
+    promediar: function(){
+      return (suma/promedio);
     },
     resultado: function(){
       return suma;
     },
     resetear: function(){
       suma=0;
+      promedio=0;
     },
     ifEquals:function(a, b, options){
       return a>b ? options.fn(this): options.inverse(this);

@@ -1,5 +1,6 @@
 
 {{#if tasks}}
+<p style="margin-left: 10px;">Alumnos calificados</p>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -19,16 +20,15 @@
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>
-      {{#ifEquals calificacion 7}}<td>Aprobado</td>{{/ifEquals}}
-      {{#ifCal calificacion 7}}<td>Reprobado</td>{{/ifCal}}
+      {{#ifEquals calificacion 7}}<td style="color: green; font-weight:bolder">Aprobado</td>{{/ifEquals}}
+      {{#ifCal calificacion 8}}<td style="color: red; font-weight:bolder">Reprobado</td>{{/ifCal}}
       <td>
         {{#if done}} {{!apertura del if}}
-        <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Calificado</a>
+        <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Revisado</a>
         {{else}}
-        <a class="btn btn-secondary" href="/tasks/{{_id}}/toggleDone">No calificado</a>
+        <a class="btn btn-secondary" href="/tasks/{{_id}}/toggleDone">No revisado</a>
         {{/if}} {{!cierre del if}}
-        <a class="btn btn-primary" href="/tasks/{{_id}}/edit">Edit</a>
-        <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+      
       </td>
     </tr>
     {{/if}}
@@ -36,6 +36,7 @@
   </tbody>
 </table>
 
+<p style="margin-left: 10px;">Alumnos no calificados</p>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -56,16 +57,16 @@
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>
-      {{#ifEquals calificacion 7}}<td>Aprobado</td>{{/ifEquals}}
-      {{#ifCal calificacion 7}}<td>Reprobado</td>{{/ifCal}}
+      {{#ifEquals calificacion 7}}<td style="color: green; font-weight:bolder">Aprobado</td>{{/ifEquals}}
+      {{#ifCal calificacion 8}}<td style="color: red; font-weight:bolder">Reprobado</td>{{/ifCal}}
       <td>
         {{#if done}} {{!apertura del if}}
         <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Calificado</a>
         {{else}}
         <a class="btn btn-secondary" href="/tasks/{{_id}}/toggleDone">No calificado</a>
         {{/if}} {{!cierre del if}}
-        <a class="btn btn-primary" href="/tasks/{{_id}}/edit">Edit</a>
-        <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Delete</a>
+        <a class="btn btn-primary" href="/tasks/{{_id}}/edit">Cambiar calificación</a>
+        <a class="btn btn-danger" href="/tasks/{{_id}}/delete">Eliminar</a>
       </td>
     </tr>
     {{/if}}

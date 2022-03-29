@@ -1,4 +1,4 @@
-<div class="container p-5 bg-danger">
+{{!-- <div class="container p-5 bg-danger">
     <div class="row">
         <div class="col-md-3">
             {{>tasks/taskForm}}
@@ -13,4 +13,19 @@
             </div>
         </div>
     </div>
+</div> --}}
+
+
+<div class="container d-flex p-2" style="margin-top: 100px;">
+    <div class="float-left col-md-5" style="margin: 30px;">
+            {{>tasks/taskForm}}
+        </div>
+        <div class="float-left col-md-5" style="margin:30px;">
+            <h1>Ver promedio del salón</h1>
+            {{#each tasks}}
+            {{#total calificacion @index}}{{/total}} 
+            {{/each}}
+            <div style="align-items:center; text-align:center; margin-top:100px;">
+               <a href="/list" style="marging:30px; border-radius: 10%; font-size:100px; text-decoration:none" class="p-3 mb-2 bg-primary text-white">{{#promediar}}{{/promediar}}</a> 
+        </div>
 </div

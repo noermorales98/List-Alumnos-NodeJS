@@ -7,6 +7,7 @@
       <th scope="col">Alumno</th>
       <th scope="col">Matrícula</th>
       <th scope="col">Calificación</th>
+      <th scope="col">Estado</th>
       <th scope="col">Opción</th>
     </tr>
   </thead>
@@ -17,6 +18,8 @@
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>
+      {{#ifEquals calificacion 7}}<td>Aprobado</td>{{/ifEquals}}
+      {{#ifCal calificacion 7}}<td>Reprobado</td>{{/ifCal}}
       <td>
         {{#if done}} {{!apertura del if}}
         <a class="btn btn-success" href="/tasks/{{_id}}/toggleDone">Calificado</a>

@@ -16,6 +16,8 @@ app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var suma=0;
 //declarando motor engine: HANDLEBARS, para que sepa que formato utilizara el prograama
 const exphbs = create({
   //nombre de la extension
@@ -24,6 +26,23 @@ const exphbs = create({
   layoutsDir: path.join(app.get("views"), "layouts"),
   //archivo principal
   defaultLayout: "main",
+  helpers:{
+    total: function(valor){
+      suma=suma+valor;
+    },
+    resultado: function(){
+      return suma;
+    },
+    resetear: function(){
+      suma=0;
+    },
+    ifEquals:function(a, b, options){
+      return a>b ? options.fn(this): options.inverse(this);
+    },
+    ifCal:function(a, b, options){
+      return a<b ? options.fn(this): options.inverse(this);
+    }
+  }
 });
 
 app.engine(".hbs", exphbs.engine);

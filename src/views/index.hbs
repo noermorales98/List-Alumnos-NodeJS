@@ -1,12 +1,16 @@
 <div class="container p-5">
     <div class="row">
-        <div class="col-md-5 ">
+        <div class="col-md-3">
             {{>tasks/taskForm}}
         </div>
-    </div>
-    <div class="col-md-3 float-right">
+        <div class="col-md-8" style="margin-left: 10px;">
             <h1>Ver promedio del salon</h1>
             <a href="/list">Ver alumnos</a>
+            {{#each tasks}}
+            {{#total calificacion @index}}{{/total}} 
+            {{/each}}
+            <h1>{{#resultado}}{{/resultado}}</h1>
             {{!-- {{>tasks/taskTable}} --}}
+    </div>
     </div>
 </div

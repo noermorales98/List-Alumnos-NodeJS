@@ -1,8 +1,8 @@
-<div >
-    <h3>Agrega un alumno</h3>
+<div>
+    <h1>Agrega un alumno</h1>
     <form action="/tasks/add" method="post">
         <div class="mb-3">
-            <label for="title" class="form-label">Nombre:</label>
+            <label for="name" class="form-label">Nombre:</label>
             <input type="text" class="form-control" id="name" placeholder="Inserte el nombre" name="name"/>
         </div>
         <div class="mb-3">
@@ -10,9 +10,9 @@
             <input type="number" maxlength="8" class="form-control" id="matricula" cols="80" name="matricula" placeholder="Inserta la matricula"></input>
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Matricula</label>
+            <label for="description" class="form-label">Calificacion</label>
             <input type="number" min="0" max="10" class="form-control" id="calificacion" cols="80" name="calificacion" placeholder="Inserta la calificacion"></input>
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-success">Añadir</button>
     </form>
-</div
+</div>

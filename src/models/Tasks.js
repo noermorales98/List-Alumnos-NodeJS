@@ -17,7 +17,7 @@ const TaskSchema = Schema(
             default: false,
         },
         calificacion: {
-            type: String
+            type: Number
         }
     },
     {

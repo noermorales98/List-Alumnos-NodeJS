@@ -47,6 +47,9 @@ const exphbs = create({
     },
     ifCal:function(a, b, options){
       return a<b ? options.fn(this): options.inverse(this);
+    },
+    listar:function(a){
+      return a+1;
     }
   }
 });

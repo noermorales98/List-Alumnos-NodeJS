@@ -16,7 +16,7 @@
     {{#each tasks}}
     {{#if done}}
     <tr>
-      <th>{{@index}}</th>
+      <th>{{listar @index}}</th>
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>
@@ -53,7 +53,7 @@
     {{#if done}}
     {{else}}
     <tr>
-      <th>{{@index}}</th>
+      <th>{{listar @index}}</th>
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>

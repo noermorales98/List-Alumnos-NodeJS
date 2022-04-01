@@ -50,6 +50,12 @@ const exphbs = create({
     },
     listar:function(a){
       return a+1;
+    },
+    dolaraeuro:function(dolar){
+      return dolar*0.90;
+    },
+    euroadolar:function(euro){
+      return euro*1.11;
     }
   }
 });

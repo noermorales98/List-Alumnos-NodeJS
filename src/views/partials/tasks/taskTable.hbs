@@ -20,6 +20,7 @@
       <td><strong>{{name}}</strong></td>
       <td>{{matricula}}</td>
       <td>{{calificacion}}</td>
+      <td>{{#euroadolar calificacion}}{{/euroadolar}}</td>
       {{#ifEquals calificacion 7}}<td style="color: green; font-weight:bolder">Aprobado</td>{{/ifEquals}}
       {{#ifCal calificacion 8}}<td style="color: red; font-weight:bolder">Reprobado</td>{{/ifCal}}
       <td>

@@ -1,4 +1,14 @@
-# Tecnologías utilizadas
+# Lista de alumnos
+Administra alumnos, promedio de alumnos
+
+### Home                       
+![](/images/home.png)
+### List
+![](/images/list.png)
+### Edit
+![](/images/edit.png)
+
+## Tecnologías utilizadas
 NodeJS -> Nucleo de programación
 
 Expres -> WS
